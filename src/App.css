@@ -1,38 +1,100 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgb(80, 69, 55);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+table {
+  border-collapse: collapse;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+table tr:hover {
+  cursor: pointer;
+  background-color: gainsboro;
+}
+
+.eventList,
+.volunteer-list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+button,
+.edit-btn {
+  padding: 0.5rem 0.75rem;
+  margin: 1rem auto;
+  background-color: rgb(70, 42, 5);
+  border: 2px solid greenyellow;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  margin: 0 1.5rem;
+}
+
+.details-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.details-page p {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  align-items: center;
+  gap: 1rem;
+  /* font-size: 1.2rem; */
 }
 
-.App-link {
-  color: #61dafb;
+.form-row > label {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-row > input {
+  outline: none;
 }

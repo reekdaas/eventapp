@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Link, Route, Routes } from "react-router-dom";
+import "./App.css";
+import EventPage from "./Pages/eventPage";
+import VolunteerPage from "./Pages/volunteerPage";
+import VolunteerDetails from "./Pages/volunteerDetails";
+import EventDetails from "./Pages/eventDetails";
+import VolunteerForm from "./Pages/volunteerForm";
+import Form from "./Pages/eventForm";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Event Management App</h1>
+      <div className="navbar">
+        <Link to="/">Event</Link>
+        <Link to="/volunteer">Volunteer</Link>
+      </div>
+      <Routes>
+        <Route path="/" element={<EventPage />} />
+        <Route path="/volunteer" element={<VolunteerPage />} />
+        <Route path="/volunteer/:volunteerId" element={<VolunteerDetails />} />
+        <Route path="/event/:eventId" element={<EventDetails />} />
+        <Route path="/volunteer/volunteerForm" element={<VolunteerForm />} />
+        <Route path="/event/eventForm" element={<Form />} />
+        <Route path="event/eventedit/:eventId" element={<Form />} />
+        <Route
+          path="/volunteer/volunteeredit/:volunteerId"
+          element={<VolunteerForm />}
+        />
+      </Routes>
     </div>
   );
 }
